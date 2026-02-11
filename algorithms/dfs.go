@@ -3,27 +3,29 @@ package algorithms
 type DFS struct {
 	adjList [][]int
 	visit   func(node int)
-	visited []bool
 }
 
 func NewDFS(adjList [][]int, visit func(node int)) *DFS {
 	return &DFS{
 		adjList: adjList,
 		visit:   visit,
-		visited: make([]bool, len(adjList)),
 	}
 }
 
-func (d *DFS) Run(node int) {
-	if node >= len(d.visited) {
-		return
+func (d *DFS) Run(node int) error {
+	visited := make([]bool, len(d.adjList))
+	if node >= len(visited) || node < 0 {
+		return ErrDFSInvalidStartNode
 	}
-	if d.visited[node] {
-		return
+	if visited[node] {
+		return nil
 	}
-	d.visited[node] = true
+	visited[node] = true
 	d.visit(node)
 	for _, adjNode := range d.adjList[node] {
-		d.Run(adjNode)
+		if err := d.Run(adjNode); err != nil {
+			return err
+		}
 	}
+	return nil
 }
