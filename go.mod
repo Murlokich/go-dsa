@@ -1,4 +1,4 @@
-module github.com/Murlokich/go-dsa.git
+module github.com/Murlokich/go-dsa
 
 go 1.25.0
 
