@@ -1,10 +1,11 @@
 package linked_list_test
 
 import (
-	"github.com/Murlokich/go-dsa.git/data-structures/linked-list"
+	"testing"
+
+	"github.com/Murlokich/go-dsa/data-structures/linked-list"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
 )
 
 type listTestCase struct {

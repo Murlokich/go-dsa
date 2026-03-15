@@ -1,7 +1,7 @@
 package algorithms
 
 import (
-	linked_list "github.com/Murlokich/go-dsa.git/data-structures/linked-list"
+	linked_list "github.com/Murlokich/go-dsa/data-structures/linked-list"
 	"github.com/pkg/errors"
 )
 
